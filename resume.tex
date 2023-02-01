@@ -1,0 +1,274 @@
+% Resume of Zachary Galeaz (zachjgal@gmail.com)
+% Uses a template *heavily* modified from one made by the following people:
+%
+% (c) 2002 Matthew Boedicker <mboedick@mboedick.org> (original author) http://mboedick.org
+% (c) 2003-2007 David J. Grant <davidgrant-at-gmail.com> http://www.davidgrant.ca
+% (c) 2008 Nathaniel Johnston <nathaniel@nathanieljohnston.com> http://www.nathanieljohnston.com
+% (c) 2012 Scott Clark <sc932@cornell.edu> cam.cornell.edu/~sc932
+%
+% This work is licensed under the Creative Commons Attribution-Noncommercial-Share Alike 2.5 License. 
+% To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/2.5/ or send a letter to
+% Creative Commons, 543 Howard Street, 5th Floor, San Francisco, California, 94105, USA.
+%
+% =========================================================================
+% =========================================================================
+% ======= TEMPLATE FOR RESUME =============================================
+% =========================================================================
+% =========================================================================
+%
+% Some reddit user said this would help ats parse the generated pdf. Let's hope so.
+% https://www.reddit.com/r/LaTeX/comments/3nr2vn/comment/cvqzffh/?utm_source=share&utm_medium=web2x&context=3
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\documentclass[11pt]{article}
+\newlength{\outerbordwidth}
+\pagestyle{empty}
+\raggedbottom
+\raggedright
+\usepackage[svgnames]{xcolor}
+\usepackage[most]{tcolorbox}
+\usepackage{framed}
+\usepackage{tocloft}
+\usepackage{enumitem}
+\usepackage{textcomp}
+\usepackage{tabularx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{fontawesome}
+
+% COLORS, LINK SETUP, STATIC STYLING
+% ==================================
+
+\definecolor{blue1}{HTML}{A9E4EF}
+\definecolor{blue2}{HTML}{3F7CAC}
+\definecolor {linkedinblue}{HTML}{0072B1}
+
+% default link color
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue2,
+    urlcolor=blue2
+}
+
+\setlength{\outerbordwidth}{3pt}  % Width of border outside of title bars
+\definecolor{shadecolor}{HTML}{3F7CAC}
+
+% The boxes containing key skills used in experiences
+\newtcbox{\KEYSKILL}{
+    colback=white,
+    colframe=black,
+    top=0.25mm,
+    left=0mm,
+    right=0mm,
+    bottom=0mm,
+    boxrule=0.5pt,
+    arc=1mm, auto outer arc,
+    on line
+}
+
+% MARGIN SETUP
+% =====================================
+
+\setlength{\evensidemargin}{-0.25in}
+\setlength{\headheight}{0in}
+\setlength{\headsep}{0in}
+\setlength{\oddsidemargin}{-0.25in}
+\setlength{\tabcolsep}{0in}
+\setlength{\textheight}{9.5in}
+\setlength{\textwidth}{7in}
+\setlength{\topmargin}{-0.3in}
+\setlength{\topskip}{0in}
+\setlength{\voffset}{0.1in}
+
+% CUSTOM COMMANDS
+% ============================================================================
+
+% The headings for resume sections
+\newcommand{\resheading}[1]{
+\begin{tcolorbox}[colback=blue2,
+                  colframe=blue1,
+                  width=\textwidth,
+                  arc=2mm, auto outer arc,
+                 ]
+  \textcolor{blue1}{\textbf{\large{#1}}}
+\end{tcolorbox}
+}
+
+% Resume entry for a school experience
+% <name> <location> <degree> <start date> <end date>
+\newcommand{\school}[5]{
+  \textbf{#1} \hfill \textit{#4} - \textit{#5}  \\
+  \vspace{0.1cm}
+  \textit{#3} \hfill   \text{#2}
+}
+
+% Resume entry for a previous job
+% <company> <job title> <start date> <end date> <(list of strings) key skills> <location>
+\newcommand{\job}[6]{
+  \textbf{#1}, \text{#2} \hfill \textit{#3} - \textit{#4} \\
+  \vspace{1mm}\quad\foreach \i in {#5} {\KEYSKILL{\i} } \hfill \text{#6}
+}
+
+% Resume entry for a project
+% <project name> <start date> <end date> <(list of strings) key skills>
+\newcommand{\project}[4]{
+  \textbf{#1} \hfill \textit{#2} - \textit{#3} \\
+  \foreach \i in {#4} {\KEYSKILL{\i} }
+}
+
+% Resume entry for an award. Maybe one day I'll win an award.
+\newcommand{\award}[4]{
+  \textbf{#1} #2 \hfill \textit{#3} #4
+}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
+% =========================================================================
+% =========================================================================
+% ======= ACTUAL RESUME CONTENT ===========================================
+% =========================================================================
+% =========================================================================
+
+\begin{document}
+
+% CONTACT DETAILS
+% ================================================
+\setlength{\extrarowheight}{2pt}
+% some weird interaction prevents the logos from being properly right-aligned, so we rely on the column widths
+\begin{tabularx}{\textwidth} {L{14.45cm} X R{4cm}}
+ 
+ \Large{\textbf{Zachary Galeaz}} & \multirow{4}{=}{\href{https://mail.google.com/mail/?view=cm\&fs=1\&to=zachjgal@gmail.com}{\Huge \color{black}{\faEnvelope}}\hspace{12pt}\href{https://www.linkedin.com/in/zachary-galeaz-199b0b172/}{\color{linkedinblue}{\Huge \faLinkedin}}\hspace{12pt} \href{https://github.com/zachjgal}{\Huge \color{black}{\faGithub}}} \\
+ 
+ \faPhone \hspace{0pt} (207) 479-0594 \hspace{2pt} \\
+ 
+ \faEnvelope \hspace{0pt} zachjgal@gmail.com \\
+ 
+ \faMapMarker\hspace{0pt} 5 Keswick St, Boston, MA 02215 \\
+ 
+\end{tabularx}
+
+\vspace{6pt}
+
+ % EDUCATION
+ % ==========================================
+        \resheading{Education}
+        \begin{itemize}[leftmargin=*,topsep=2pt]
+        	\item[]
+        	      \school
+        	      {Northeastern University}
+        	      {Boston, MA}
+        	      {BS Computer Science}
+        	      {September 2017}
+        	      {May 2022}
+        	      	
+        \end{itemize}
+     
+% WORK EXPERIENCE
+% ===========================================
+      \resheading{Work Experience}
+	      \begin{itemize}[leftmargin=*,topsep=4pt]
+      	\item[]
+      	      \job
+      	      {Starry}
+      	      {Software Engineer}
+      	      {June 2022}
+      	      {January 2023}
+      	      {Python,Automation,WiFi,E2E Testing,Ansible,XCTest}
+      	      {Boston, MA}
+      	      \begin{itemize}
+      	      	\item Developed software to automate both protocol and performance-based testing of wireless routers.
+      	      	\item Used test results to negotiate fixes with vendors and ensure successful firmware deployments.
+      	      	\item Provisioned and managed devices with Ansible for consistent and reproducible functional testing.
+      	      	\item Constructed the iOS development team's CI pipeline with GitHub Actions and automated UI tests.
+      	      \end{itemize}
+      	\item[]
+      	      \job
+      	      {Starry}
+      	      {Software Engineer Co-op}
+      	      {July 2020}
+      	      {June 2022}
+      	      {Networking,Firmware Validation,Regression Testing} 
+      	      {Boston, MA}
+      	      \begin{itemize}
+      	      	\item Wrote Python to validate firmware developed for 37GHz and 24GHz wireless networking devices.
+      	      	\item Contributed to internal frameworks and utilities to model and automate testing scenarios.  
+      	      \end{itemize}
+      	\item[]
+      	      \job
+      	      {Draper}
+      	      {Machine Intelligence Group Co-op}
+      	      {January 2019}
+      	      {August 2019}
+      	      {Data Science,Machine Learning,Data Visualization}
+      	      {Boston, MA}
+      	      \begin{itemize}
+      	        \item Gauged stress levels of experiment subjects using biosignals and machine learning. Owned all source code for the project, and presented results to manager and clients.
+      	      	\item Helped develop a predictive deep learning model for financial applications. Wrote Jupyter notebooks for data processing and visualization, and fixed model implementation bugs.
+      	      \end{itemize}
+      \end{itemize}
+
+% PROJECTS
+% ============================================
+      \resheading{Projects}
+      \begin{itemize}[leftmargin=*,topsep=4pt]
+      	\item[]
+      	      \project
+      	      {CodeSprout (in development)}
+      	      {March 2019}
+      	      {Present}
+      	      {Flask,Postgres,SQLAlchemy,JavaScript,React,REST,AWS}
+  	      	 \begin{itemize}
+      	      	\item Developing a website to foster collaboration between programmers looking to gain practical software development experience through independent projects.
+      	      	\item Awarded over \$6000 in AWS credits and cash through Northeastern's Jelly Fund program.
+      	      \end{itemize}
+      \end{itemize}
+
+% CURRENT INTERESTS
+% ==========================================
+% Rather than padding my resume with non-essential details about my work experiences 
+% that could be discussed during an interview, I decided to share some of my interests.
+% I think most people do their best work when they feel connected to the people around
+% them.
+
+  \resheading{Current Interests}
+
+% 3 2-item lists, inside a 1x3 table
+
+  \begin{itemize}[leftmargin=*,topsep=2pt]
+	\item[]
+	\vspace{-8px}  % lol
+  	 \begin{tabularx}{\textwidth} { 
+   	>{\arraybackslash}X
+  	>{\arraybackslash}X 
+  	>{\arraybackslash}X 
+      }
+      \begin{itemize}[topsep=0pt]
+	  	\item Skiing
+	  	\item Weightlifting
+  	\end{itemize} &
+  	\begin{itemize}[topsep=0pt]
+  		\item Reading
+  		\item The outdoors
+  	\end{itemize} & 
+  	\begin{itemize}[topsep=0pt]
+  	    \item Indoor bouldering
+  		\item Learning Japanese
+  	\end{itemize}
+  	\end{tabularx}
+\end{itemize}
+
+% Learning Japanese
+% Own a guinea pig named Benny. He's a weirdo and thrives without needing another pig
+% Men's fashion, and ranting about fast fashion to anyone who will listen.
+% Collect perfume
+% Skateboarding, but I always end up hurting myself
+% Enjoy woodworking and crafty things. Rarely have the time or resources, though.
+
+
+	      
+\end{document}
